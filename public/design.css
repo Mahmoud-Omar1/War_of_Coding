@@ -1,0 +1,203 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1b0f2e, #05070d 70%);
+  color: #eaeaff;
+  font-family: "Segoe UI";
+  overflow-x: hidden;
+}
+
+/* glowing background effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.25), transparent 60%);
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.glass {
+  background: rgba(20, 20, 40, 0.55);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(138, 43, 226, 0.15);
+}
+
+/* ====================== HEADER BRAND ====================== */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+
+.header-logo-icon {
+  height: 68px;
+  width: 68px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 18px rgba(138, 43, 226, 0.85));
+  transition: transform 0.3s ease;
+  border: 2px solid rgba(138, 43, 226, 0.4);
+  border-radius: 12px;
+  background: rgba(18, 18, 47, 0.6);
+}
+
+.header-logo-icon:hover {
+  transform: scale(1.08) rotate(8deg);
+}
+
+
+.header-text {
+  font-size: 2.35rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #c084fc, #a78bff, #e0b0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 20px rgba(138, 43, 226, 0.9),
+    0 0 35px rgba(138, 43, 226, 0.6),
+    0 0 50px rgba(138, 43, 226, 0.3);
+  transition: all 0.3s ease;
+}
+
+.header-text:hover {
+  text-shadow:
+    0 0 25px rgba(138, 43, 226, 1),
+    0 0 45px rgba(138, 43, 226, 0.8);
+  transform: translateY(-1px);
+}
+
+
+
+/* BUTTONS */
+.btn {
+  border: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6a5acd, #8a2be2);
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #00c896, #00ffcc);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #ffcc00, #ff8800);
+  box-shadow: 0 0 15px rgba(255, 200, 0, 0.3);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* DROPDOWN */
+select {
+  background: rgba(0, 0, 0, 0.4) !important;
+  color: white !important;
+  border: 1px solid rgba(138, 43, 226, 0.4) !important;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
+}
+
+/* PROBLEM BOX */
+#problemBox {
+  background: rgba(10, 10, 25, 0.7);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  box-shadow: 0 0 20px rgba(147, 46, 241, 0.203);
+}
+
+/* INPUT OUTPUT */
+textarea {
+  background: rgba(10, 10, 25, 0.7) !important;
+  color: #eaeaff !important;
+  border: 1px solid rgba(138, 43, 226, 0.25) !important;
+  box-shadow: inset 0 0 10px rgba(138, 43, 226, 0.1);
+}
+
+/* CODEMIRROR */
+.CodeMirror {
+  height: 86vh;
+  border: 1px solid rgba(137, 43, 226, 0.522);
+  border-radius: 16px;
+  border: 1px solid rgba(160, 68, 246, 0.662);
+  box-shadow: 0 0 20px rgba(124, 21, 221, 0.523);
+  font-size: 13.6px;
+}
+
+/* TERMINAL */
+#terminal {
+  height: 80vh;
+  background: #0d1117;
+  border-radius: 15px;
+  border: 1px solid rgba(137, 43, 226, 0.522);
+  box-shadow: 0 0 20px rgba(137, 43, 226, 0.384);
+  padding: 8px;
+}
+
+.problem-card {
+  color: #fff;
+  max-height: 155px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+}
+
+.problem-title {
+  color: #c084fc;
+  margin-bottom: 9px;
+  font-size: 1.35rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(138,43,226,0.35);
+  word-break: break-word;
+}
+
+.problem-section {
+  margin-bottom: 9px;
+}
+
+.problem-section h4 {
+  color: #00e5ff;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+.problem-section p,
+.problem-section pre {
+  margin: 0;
+  color: #e5e7eb;
+  line-height: 1.5;
+  font-size: 0.92rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.problem-section pre {
+  background: rgba(0,0,0,0.28);
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.problem-loading {
+  color: #00e5ff;
+  font-weight: bold;
+}
+
+.problem-error {
+  color: #ff4d4f;
+  font-weight: bold;
+}

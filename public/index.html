@@ -5,180 +5,33 @@
   <meta charset="UTF-8" />
   <title>War of Coding</title>
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- CodeMirror -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
 
-  <!-- Favicon -->
-  <link rel="icon" href="icon.jpg" type="image/jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm/css/xterm.css">
+
+  <link rel="icon" href="assets/icon.jpg" type="image/jpg">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/clike/clike.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xterm/lib/xterm.min.js"></script>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<style>
-
-body {
-  margin: 0;
-  background: radial-gradient(circle at top, #1b0f2e, #05070d 70%);
-  color: #eaeaff;
-  font-family: "Segoe UI";
-  overflow-x: hidden;
-}
-
-/* glowing background effect */
-body::before {
-  content: "";
-  position: fixed;
-  top: -200px;
-  left: -200px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(138,43,226,0.25), transparent 60%);
-  filter: blur(80px);
-  z-index: 0;
-}
-
-.glass {
-  background: rgba(20, 20, 40, 0.55);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 18px;
-  box-shadow: 0 0 25px rgba(138,43,226,0.15);
-}
-
-/* ====================== HEADER BRAND ====================== */
-.header-brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-/* الأيقونة (الدرع) */
-.header-logo-icon {
-  height: 68px;
-  width: 68px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 18px rgba(138, 43, 226, 0.85));
-  transition: transform 0.3s ease;
-  border: 2px solid rgba(138, 43, 226, 0.4);
-  border-radius: 12px;
-  background: rgba(10, 10, 25, 0.6);
-}
-
-.header-logo-icon:hover {
-  transform: scale(1.08) rotate(8deg);
-}
-
-/* النص "War of Coding" */
-.header-text {
-  font-size: 2.35rem;
-  font-weight: 900;
-  letter-spacing: -2px;
-  line-height: 1;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #c084fc, #a78bff, #e0b0ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 
-    0 0 20px rgba(138, 43, 226, 0.9),
-    0 0 35px rgba(138, 43, 226, 0.6),
-    0 0 50px rgba(138, 43, 226, 0.3);
-  transition: all 0.3s ease;
-}
-
-.header-text:hover {
-  text-shadow: 
-    0 0 25px rgba(138, 43, 226, 1),
-    0 0 45px rgba(138, 43, 226, 0.8);
-  transform: translateY(-1px);
-}
-
-/* ====================== باقي الستايل ====================== */
-
-/* BUTTONS */
-.btn {
-  border: none;
-  font-weight: 600;
-  transition: 0.2s;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #6a5acd, #8a2be2);
-  box-shadow: 0 0 15px rgba(138,43,226,0.4);
-}
-
-.btn-success {
-  background: linear-gradient(135deg, #00c896, #00ffcc);
-  box-shadow: 0 0 15px rgba(0,255,204,0.3);
-}
-
-.btn-warning {
-  background: linear-gradient(135deg, #ffcc00, #ff8800);
-  box-shadow: 0 0 15px rgba(255,200,0,0.3);
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
-}
-
-/* DROPDOWN */
-select {
-  background: rgba(0,0,0,0.4) !important;
-  color: white !important;
-  border: 1px solid rgba(138,43,226,0.4) !important;
-  box-shadow: 0 0 10px rgba(138,43,226,0.2);
-}
-
-/* PROBLEM BOX */
-#problemBox {
-  background: rgba(10,10,25,0.7);
-  border: 1px solid rgba(138,43,226,0.3);
-  box-shadow: 0 0 20px rgba(138,43,226,0.1);
-}
-
-/* INPUT OUTPUT */
-textarea {
-  background: rgba(10,10,25,0.7) !important;
-  color: #eaeaff !important;
-  border: 1px solid rgba(138,43,226,0.25) !important;
-  box-shadow: inset 0 0 10px rgba(138,43,226,0.1);
-}
-
-/* CODEMIRROR */
-.CodeMirror {
-  height: 65vh;
-  border-radius: 14px;
-  border: 1px solid rgba(138,43,226,0.3);
-  box-shadow: 0 0 20px rgba(138,43,226,0.15);
-  font-size: 14px;
-}
-
-</style>
-
+  <link rel="stylesheet" href="design.css">
+  <script src="main.js" defer></script>
 </head>
 
 <body>
-
   <div class="container-fluid p-4">
-
     <div class="p-3 rounded-4" style="background:rgba(20,26,45,0.75); border:1px solid #333;">
 
-      <!-- HEADER جديد (الأيقونة + النص) -->
       <div class="d-flex justify-content-between align-items-center mb-3">
-        
         <div class="header-brand">
-          <!-- الأيقونة (الدرع) -->
-          <img src="icon.jpg" alt="War of Coding" class="header-logo-icon">
-          
-          <!-- النص War of Coding -->
+          <img src="assets/05.png" alt="War of Coding" class="header-logo-icon">
           <div class="header-text">War of Coding</div>
         </div>
 
@@ -189,139 +42,56 @@ textarea {
             <option value="71">Python</option>
           </select>
 
+          <select id="difficulty" class="form-select" style="width:150px">
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+
           <button class="btn btn-primary" onclick="generateProblem()">Generate</button>
           <button class="btn btn-success" onclick="runCode()">Run</button>
           <button class="btn btn-warning" onclick="submitSolution()">Submit</button>
         </div>
       </div>
 
-      <!-- PROBLEM -->
       <div id="problemBox" class="p-3 mb-3 rounded-3"
         style="background:#111; border:1px solid #333; white-space:pre-wrap;">
         Problem will appear here...
       </div>
 
-      <!-- MAIN -->
       <div class="row g-3">
-
         <div class="col-lg-8">
           <textarea id="editor"></textarea>
         </div>
 
         <div class="col-lg-4">
-
-          <label>Input</label>
-          <textarea id="input" class="form-control mb-3"></textarea>
-
-          <label>Output</label>
-          <textarea id="output" class="form-control" readonly></textarea>
-
+          <label class="mb-2">Terminal 💻</label>
+          <div id="terminal"></div>
         </div>
-
       </div>
 
     </div>
   </div>
 
-  <!-- بوب أب جميل -->
-  <div class="modal fade" id="verdictModal" tabindex="-1" aria-labelledby="verdictTitle" aria-hidden="true">
+  <div class="modal fade" id="verdictModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content glass" style="background: rgba(20, 20, 40, 0.98); border: 2px solid rgba(138,43,226,0.6);">
+      <div class="modal-content glass"
+        style="background: rgba(20, 20, 40, 0.98); border: 2px solid rgba(138,43,226,0.6);">
         <div class="modal-header border-0 pb-2">
-          <h5 class="modal-title text-white" id="verdictTitle">نتيجة التقديم</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title text-white">Result</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body text-center py-4">
-          <div id="verdictIcon" class="mb-4" style="font-size: 5rem; line-height: 1;"></div>
+          <div id="verdictIcon" class="mb-4" style="font-size: 5rem;"></div>
           <h3 id="verdictText" class="fw-bold mb-2"></h3>
           <small id="verdictSub" class="text-white-50"></small>
         </div>
         <div class="modal-footer border-0">
-          <button type="button" class="btn btn-primary px-5 py-2" data-bs-dismiss="modal">تمام</button>
+          <button type="button" class="btn btn-primary px-5 py-2" data-bs-dismiss="modal">Ok</button>
         </div>
       </div>
     </div>
   </div>
-
-  <script>
-
-    const editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
-      mode: "text/x-c++src",
-      theme: "dracula",
-      lineNumbers: true
-    });
-
-    editor.setValue(`#include <bits/stdc++.h>
-using namespace std;
-int main(){ return 0; }`);
-
-    let currentProblem = null;
-
-    async function generateProblem() {
-      const lang = document.getElementById("language").selectedOptions[0].text;
-      const res = await fetch("/generate-problem", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ language: lang })
-      });
-      const data = await res.json();
-      currentProblem = data;
-      document.getElementById("problemBox").innerText = data.problem || "Failed to generate";
-    }
-
-    async function runCode() {
-      const res = await fetch("/run", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          source_code: editor.getValue(),
-          stdin: document.getElementById("input").value,
-          language_id: Number(document.getElementById("language").value)
-        })
-      });
-      const data = await res.json();
-      document.getElementById("output").value = data.output;
-    }
-
-    async function submitSolution() {
-      const res = await fetch("/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          source_code: editor.getValue(),
-          language_id: Number(document.getElementById("language").value),
-          tests: currentProblem?.tests || []
-        })
-      });
-      const data = await res.json();
-      showVerdictModal(data.verdict);
-    }
-
-    function showVerdictModal(verdict) {
-      const modal = new bootstrap.Modal(document.getElementById('verdictModal'));
-      const iconEl = document.getElementById('verdictIcon');
-      const textEl = document.getElementById('verdictText');
-      const subEl  = document.getElementById('verdictSub');
-
-      if (verdict && (verdict.toLowerCase().includes('accept') || verdict.toLowerCase().includes('correct'))) {
-        iconEl.innerHTML = '✅';
-        iconEl.style.color = '#00ffcc';
-        textEl.style.color = '#00ffcc';
-        textEl.innerHTML = 'الحل <strong>صح 100%</strong>';
-        subEl.textContent = 'مبروك! 🎉 تقدمت بنجاح';
-      } else {
-        iconEl.innerHTML = '❌';
-        iconEl.style.color = '#ff4444';
-        textEl.style.color = '#ff4444';
-        textEl.innerHTML = 'الحل <strong>غلط</strong>';
-        subEl.textContent = verdict || 'جرب تاني يا بطل 🔥';
-      }
-
-      modal.show();
-    }
-
-  </script>
-
 </body>
 
 </html>
