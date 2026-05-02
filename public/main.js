@@ -7,10 +7,37 @@ const editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
 
 editor.setValue(`#include <iostream>
 using namespace std;
+
 int main(){ 
 
-  return 0; 
+    return 0; 
 }`);
+
+var val = document.getElementById("language");
+
+document.getElementById("language").addEventListener("change", function () {
+  const langId = Number(this.value);
+
+  if (langId === 54) {
+    editor.setValue(`#include <iostream>
+using namespace std;
+
+int main(){ 
+
+    return 0; 
+}`);
+  }
+  else if (langId === 62) {
+    editor.setValue(`public class Script{
+    public static void main(String[] args){
+        
+    }
+}`);
+  }
+  else if (langId === 71) {
+    editor.setValue(`print('Hello World!')`);
+  }
+});
 
 const terminal = new Terminal({
   cursorBlink: true,
@@ -221,7 +248,7 @@ function showVerdictModal(verdict) {
     iconEl.style.color = "#ff4444";
     textEl.style.color = "#ff4444";
     textEl.innerHTML = "الحل <strong>غلط للاسف</strong>";
-    subEl.textContent =  "Try Agian Hero! 🔥🔥";
+    subEl.textContent = "Try Agian Hero! 🔥🔥";
   }
 
   modal.show();

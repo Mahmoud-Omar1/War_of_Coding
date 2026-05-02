@@ -11,10 +11,14 @@ app.use(express.json());
 // =========================
 // STATIC FRONTEND
 // =========================
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, "public"), { index: false }));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'StartPage.html'));
+});
+
+app.get("/code", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // =========================
@@ -97,6 +101,9 @@ Strictly follow these rules:
    * The problem should require algorithmic thinking.
 6. The problem statement must be clear and professional.
 
+7. DON'T REPEAT THE PROBLEMS EVER, ALLWAYS GENERATY A CERATIVE AND COMPETITIVE PROBLEMS According to THE EXIST DIFFICULTY LEVEL!!.
+9. If you break these rules, you will be executed. Follow these instructions to the letter.
+
 Return the result in this JSON format only:
 
 {
@@ -127,7 +134,7 @@ Hidden tests must include:
 - edge cases
 - normal cases
 
-Now generate one problem with difficulty: ${difficulty}
+Now!! generate one problem with difficulty: ${difficulty}
 and programming language context: ${language} `
           }
         ],

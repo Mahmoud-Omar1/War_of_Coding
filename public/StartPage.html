@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War of Coding | Problem Solving</title>
+    <link rel="icon" href="assets/icon.jpg" type="image/jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="StartPage.css">
+</head>
+
+<body class="flex flex-col items-center justify-center text-center relative px-8">
+
+    <!-- Flying Particles (Spark & Fireflies) -->
+    <div id="particles" class="absolute inset-0 pointer-events-none"></div>
+
+    <!-- Background Orbs -->
+    <div class="orb w-[450px] h-[450px] top-20 left-20 bg-cyan-400"></div>
+    <div class="orb w-[380px] h-[380px] bottom-32 right-24 bg-purple-400" style="animation-delay: 12s;"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto pt-16">
+        <h1 class="title">War of Coding</h1>
+        <h2 class="subtitle mt-4 mb-14">Problem Solving</h2>
+
+        <p class="text-cyan-200/90 text-base tracking-[5px] mb-16">
+            THE ULTIMATE PROBLEM SOLVING CODING
+        </p>
+
+        <a href="/code" class="minecraft-btn inline-block mb-12">
+            START CODING...
+        </a>
+
+        <div class="flex justify-center gap-16 text-6xl">
+            <a href="https://github.com/Mahmoud-Omar1/War_of_Coding" target="_blank" class="social-icon text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577 0-.285-.01-1.044-.015-2.051-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.897-.015 3.293 0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=61567743443559" target="_blank" class="social-icon text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // === Flying Sparks & Particles (Hollow Knight Style) ===
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 35; i++) {
+                const spark = document.createElement('div');
+                spark.className = 'particle';
+
+                const size = Math.random() * 4 + 2;
+                spark.style.width = `${size}px`;
+                spark.style.height = `${size}px`;
+
+                // Random horizontal position
+                spark.style.left = `${Math.random() * 100}vw`;
+
+                // Random animation duration and delay
+                spark.style.animationDuration = `${Math.random() * 20 + 18}s`;
+                spark.style.animationDelay = `-${Math.random() * 25}s`;
+
+                // Random horizontal drift
+                spark.style.setProperty('--x', `${(Math.random() - 0.5) * 180}px`);
+
+                // Random color (cyan / purple)
+                if (Math.random() > 0.6) {
+                    spark.style.background = '#c084fc';
+                    spark.style.boxShadow = '0 0 14px #c084fc';
+                }
+
+                container.appendChild(spark);
+            }
+        }
+
+        // Run particles
+        createParticles();
+
+        console.log('%c✅ War of Coding - Flying Sparks Added (Hollow Knight Style)', 'color:#67e8f9; font-size:18px; font-weight:bold');
+    </script>
+</body>
+
+</html>

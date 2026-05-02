@@ -1,0 +1,125 @@
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    body {
+        background: radial-gradient(circle at center, #05050f 0%, #0f0f1f 60%, #020208 100%);
+        min-height: 100vh;
+        overflow: hidden;
+        position: relative;
+        font-family: 'Press Start 2P', cursive;
+    }
+
+    /* === Hollow Knight Style Flying Particles === */
+    .particle {
+        position: absolute;
+        border-radius: 50%;
+        background: #67e8f9;
+        box-shadow: 0 0 12px #67e8f9, 0 0 20px #a78bff;
+        opacity: 0;
+        animation: flySpark 25s linear infinite;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    @keyframes flySpark {
+        0% {
+            transform: translate(0, 100vh) scale(0.6);
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 0.9;
+        }
+
+        90% {
+            opacity: 0.9;
+        }
+
+        100% {
+            transform: translate(var(--x), -100px) scale(0.4);
+            opacity: 0;
+        }
+    }
+
+    .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: 0.12;
+        animation: floatOrb 40s infinite linear;
+        z-index: 0;
+    }
+
+    @keyframes floatOrb {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        100% {
+            transform: translate(160px, -160px);
+        }
+    }
+
+    .title {
+        font-size: 3.3rem;
+        line-height: 1.05;
+        font-weight: 900;
+        letter-spacing: -3px;
+        background: linear-gradient(90deg, #67e8f9, #a78bff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 25px #67e8f9;
+        animation: titlePulse 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes titlePulse {
+        from {
+            filter: brightness(1);
+        }
+
+        to {
+            filter: brightness(1.25);
+        }
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+        letter-spacing: 7px;
+        color: #67e8f9;
+        text-shadow: 0 0 12px #67e8f9;
+    }
+
+    .minecraft-btn {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 1.15rem;
+        padding: 14px 55px;
+        color: #fff;
+        background: linear-gradient(#22c55e, #16a34a);
+        border: 5px solid #15803d;
+        border-bottom: 8px solid #166534;
+        border-radius: 6px;
+        box-shadow: 0 10px 0 #166534;
+        text-shadow: 2px 2px 0 #052e16;
+        transition: all 0.1s ease;
+        cursor: pointer;
+        user-select: none;
+    }
+    .minecraft-btn:hover{
+        background: linear-gradient(#0eb04a, #28e76e);
+        color:rgb(255, 221, 221);
+        box-shadow: 0 0 50px #45d47c;
+    }
+
+    .minecraft-btn:active {
+        transform: translateY(6px);
+        border-bottom-width: 3px;
+        box-shadow: 0 4px 0 #166534;
+    }
+
+    .social-icon {
+        transition: all 0.4s ease;
+    }
+
+    .social-icon:hover {
+        transform: scale(1.25) rotate(12deg);
+        filter: drop-shadow(0 0 18px #67e8f9);
+    }

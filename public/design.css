@@ -38,7 +38,7 @@ body::before {
 .header-logo-icon {
   height: 68px;
   width: 68px;
-  object-fit: contain;
+  object-fit: cover;
   filter: drop-shadow(0 0 18px rgba(138, 43, 226, 0.85));
   transition: transform 0.3s ease;
   border: 2px solid rgba(138, 43, 226, 0.4);
@@ -129,7 +129,7 @@ textarea {
 
 /* CODEMIRROR */
 .CodeMirror {
-  height: 86vh;
+  height: 90vh;
   border: 1px solid rgba(137, 43, 226, 0.522);
   border-radius: 16px;
   border: 1px solid rgba(160, 68, 246, 0.662);
